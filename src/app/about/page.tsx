@@ -26,7 +26,7 @@ export default function AboutPage() {
               className="mt-4 text-lg text-indigo-200 max-w-3xl mx-auto animate-fade-in-down"
               style={{ animationDelay: '0.4s', animationFillMode: 'backwards' }}
             >
-              Kami adalah partner digital Anda, berdedikasi untuk mengubah ide menjadi solusi web dan aplikasi yang fungsional dan modern.
+              Dari ide hingga eksekusi, kami mengubah gagasan Anda menjadi solusi digital yang cerdas dan relevan.
             </p>
           </div>
         </section>
