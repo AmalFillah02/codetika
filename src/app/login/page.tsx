@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import { Lock, Mail, Loader2, AlertTriangle } from "lucide-react";
-import { Player } from "@lottiefiles/react-lottie-player";
+// import { Player } from "@lottiefiles/react-lottie-player"; // Dihapus karena tidak terpakai
 
 export default function LoginPage() {
   const router = useRouter();
@@ -39,7 +39,7 @@ export default function LoginPage() {
       <div className="w-full max-w-md animate-fade-in-up">
         <div className="text-center mb-8">
             <h1 className="text-4xl font-bold text-white">Admin Access</h1>
-            <p className="text-indigo-300">Ini adalah halaman login untuk admin, jika tidak berkepentingan silahkan keluar</p>
+            <p className="text-indigo-300">Selamat datang kembali, silakan masuk.</p>
         </div>
         
         <div className="bg-indigo-900/20 backdrop-blur-xl border border-indigo-500/20 p-8 rounded-2xl shadow-2xl">

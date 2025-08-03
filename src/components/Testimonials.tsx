@@ -47,8 +47,9 @@ export function Testimonials() {
               className="bg-indigo-900/20 backdrop-blur-sm border border-indigo-500/20 rounded-lg p-8 shadow-lg transition-all duration-300 hover:shadow-pink-500/10 hover:border-indigo-500/50 hover:-translate-y-2 flex flex-col"
             >
               <Quote className="w-10 h-10 text-pink-500/50 mb-4" />
+              {/* --- PERBAIKAN DI SINI: Hapus tanda kutip literal --- */}
               <p className="text-indigo-200 italic flex-grow">
-                "{testimonial.quote}"
+                {testimonial.quote}
               </p>
               <div className="flex items-center mt-6 pt-6 border-t border-indigo-800/50">
                 <Image

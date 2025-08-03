@@ -5,7 +5,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
+// import { Footer } from "@/components/Footer"; // Dihapus karena tidak terpakai
 import { ArrowLeft, User, Briefcase, Boxes, ShoppingCart, CheckCircle } from 'lucide-react';
 
 // --- Data Konfigurasi ---
@@ -18,7 +18,7 @@ const featureList: FeatureOption[] = [
   { label: "Login & Registrasi Pengguna", price: 350000 },
   { label: "Manajemen User & Hak Akses", price: 450000 },
   { label: "Dashboard Admin Interaktif", price: 600000 },
-  { label: "Pencarian Data Lanjutan", price: 400000 },
+  { label: "Pencarian Data (Filter & Sorting)", price: 300000 },
   { label: "Manajemen Konten (CRUD)", price: 700000 },
   { label: "Integrasi Payment Gateway", price: 650000 },
   { label: "Laporan & Statistik Penjualan", price: 450000 },
@@ -75,7 +75,8 @@ export default function OrderPage() {
 
   // Fungsi untuk validasi langkah pertama
   const validateStep1 = () => {
-    let tempErrors = { name: '', email: '' };
+    // Diubah dari 'let' menjadi 'const'
+    const tempErrors = { name: '', email: '' };
     let isValid = true;
 
     if (!formData.name.trim()) {
@@ -213,6 +214,7 @@ export default function OrderPage() {
                     >
                         <ShoppingCart size={18} className="hidden sm:inline" />
                         <span>Konfirmasi</span>
+                        <span className="hidden sm:inline">&nbsp;Pesanan</span>
                     </button>
                 )}
             </div>
@@ -271,7 +273,7 @@ const InputField = (props: React.InputHTMLAttributes<HTMLInputElement> & { label
 const SelectField = (props: React.SelectHTMLAttributes<HTMLSelectElement> & { label: string; options: string[] }) => (
   <div>
     <label htmlFor={props.name} className="block text-sm font-medium text-indigo-200 mb-1">{props.label}</label>
-    <select {...props} id={props.name} className="w-full p-3 bg-[#1a1a2e] border border-indigo-600/50 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition text-white">
+    <select {...props} id={props.name} className="w-full p-3 bg-gray-800/50 border border-indigo-600/50 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition text-white">
       <option value="">-- Pilih salah satu --</option>
       {props.options.map(opt => <option key={opt} value={opt}>{opt}</option>)}
     </select>
