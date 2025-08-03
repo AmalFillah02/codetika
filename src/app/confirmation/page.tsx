@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { CheckCircle, Home, Loader2, Banknote, Clipboard } from 'lucide-react';
+import { CheckCircle, Home, Loader2, Clipboard } from 'lucide-react';
 
 // Helper untuk format mata uang
 const currencyFormatter = (amount: number) => {
