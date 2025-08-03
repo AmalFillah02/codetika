@@ -45,7 +45,7 @@ export default function AboutPage() {
                 </div>
                 <h2 className="text-3xl font-bold text-white mb-4">Misi Kami</h2>
                 <p className="text-indigo-200 text-lg">
-                  Memberikan solusi digital berkualitas tinggi yang dapat diakses oleh semua kalangan, dari individu hingga bisnis skala menengah, dengan fokus pada teknologi modern dan desain yang berpusat pada pengguna.
+                  Memberikan solusi digital berkualitas tinggi yang dapat diakses oleh semua kalangan, dari individu hingga bisnis skala menengah, dengan fokus pada teknologi modern dan desain yang berorientasi pada pengguna.
                 </p>
               </div>
               <div 
@@ -58,7 +58,7 @@ export default function AboutPage() {
                 </div>
                 <h2 className="text-3xl font-bold text-white mb-4">Visi Kami</h2>
                 <p className="text-indigo-200 text-lg">
-                  Menjadi penyedia layanan freelance terpercaya di Indonesia yang dikenal karena kualitas, profesionalisme, dan kemampuannya dalam membantu klien mencapai kesuksesan di dunia digital.
+                  Menjadi layanan software development terpercaya yang dikenal karena kualitas, profesionalisme, dan kemampuan dalam membantu mencapai kesuksesan di dunia digital.
                 </p>
               </div>
             </div>
@@ -89,15 +89,15 @@ export default function AboutPage() {
                   Filosofi CODETIKA
                 </h2>
                 <p className="text-indigo-200 mb-6 text-lg text-justify">
-                  <b>Codetika</b> adalah konsep yang menggabungkan keahlian coding dengan landasan etika yang kuat. Lebih dari sekadar menulis baris-baris kode, codetika mencerminkan tanggung jawab moral kami terhadap dampak sosial dari teknologi yang kami bangun. Ini mencakup komitmen terhadap integritas, transparansi, dan keamanan, serta kepedulian terhadap privasi dan keberlangsungan ekosistem digital.
+                  <b>Codetika</b> adalah konsep yang memadukan kecerdasan teknologi dengan landasan etika yang kuat. Lebih dari sekadar membangun sistem aplikasi, codetika mencerminkan tanggung jawab moral kami terhadap dampak sosial dari teknologi yang kami bangun. Ini mencakup komitmen terhadap integritas, transparansi, dan keamanan, serta kepedulian terhadap privasi dan keberlangsungan ekosistem digital.
                 </p>
                 <h3 className="text-xl font-semibold text-white mb-4">Nilai-nilai Kami</h3>
                 <ul className="space-y-3 text-indigo-200">
                   {/* Ikon disesuaikan dengan tema baru */}
                   <li className="flex items-start gap-3"><CheckCircle className="w-5 h-5 mt-1 text-pink-500 flex-shrink-0" /><span><strong>Integritas:</strong> Orisinalitas, tidak menyisipkan kode berbahaya, dan menghargai hak cipta.</span></li>
-                  <li className="flex items-start gap-3"><CheckCircle className="w-5 h-5 mt-1 text-pink-500 flex-shrink-0" /><span><strong>Transparansi:</strong> Kode yang jujur dan dapat ditinjau secara terbuka.</span></li>
+                  <li className="flex items-start gap-3"><CheckCircle className="w-5 h-5 mt-1 text-pink-500 flex-shrink-0" /><span><strong>Transparansi:</strong> Resource yang jujur dan dapat ditinjau secara terbuka.</span></li>
                   <li className="flex items-start gap-3"><CheckCircle className="w-5 h-5 mt-1 text-pink-500 flex-shrink-0" /><span><strong>Tanggung Jawab:</strong> Menghindari penyalahgunaan data, dan membangun solusi yang memanusiakan pengguna.</span></li>
-                  <li className="flex items-start gap-3"><CheckCircle className="w-5 h-5 mt-1 text-pink-500 flex-shrink-0" /><span><strong>Kolaborasi:</strong> Siap belajar, berbagi, dan menghargai kontribusi orang lain.</span></li>
+                  <li className="flex items-start gap-3"><CheckCircle className="w-5 h-5 mt-1 text-pink-500 flex-shrink-0" /><span><strong>Kolaborasi:</strong> Siap belajar, berbagi, dan menghargai kontribusi dari semua pihak.</span></li>
                 </ul>
               </div>
             </div>
