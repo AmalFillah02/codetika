@@ -42,7 +42,7 @@ export function Footer() {
           <div>
             <h4 className="font-semibold text-white mb-4">Ikuti Kami</h4>
             <div className="flex space-x-4">
-              <a href="#" aria-label="Instagram" className="text-indigo-400 hover:text-white transition"><Instagram /></a>
+              <a href="https://www.instagram.com/codetika.id/" target="_blank" aria-label="Instagram" className="text-indigo-400 hover:text-white transition"><Instagram /></a>
             </div>
           </div>
         </div>

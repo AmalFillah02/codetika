@@ -1,7 +1,7 @@
 // src/app/page.tsx
-"use client"; // <-- PERBAIKAN: Tambahkan ini di baris paling atas
+"use client";
 
-import dynamic from 'next/dynamic'; // 1. Impor 'dynamic'
+import dynamic from 'next/dynamic'; // dynamic
 import { Header } from "@/components/Header";
 import { Features } from "@/components/Features";
 import { Testimonials } from "@/components/Testimonials";
