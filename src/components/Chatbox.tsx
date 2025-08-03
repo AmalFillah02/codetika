@@ -130,7 +130,7 @@ export function Chatbox({ defaultUser }: { defaultUser?: string }) {
 
   return (
     // --- PERBAIKAN DI SINI: Mengurangi nilai ketinggian ---
-    <div className="fixed bottom-5 right-5 w-[calc(100%-40px)] sm:w-96 h-[65vh] sm:h-[500px] bg-white rounded-2xl shadow-2xl flex flex-col z-50 animate-fade-in-up">
+    <div className="fixed bottom-5 right-5 w-[calc(100%-40px)] sm:w-96 h-[45vh] sm:h-[450px] bg-white rounded-2xl shadow-2xl flex flex-col z-50 animate-fade-in-up">
       <div className="bg-gradient-to-l from-gray-900 via-indigo-900 to-[#1a1a2e] shadow-md text-white p-4 rounded-t-2xl flex justify-between items-center">
         <h3 className="font-bold text-lg">Public Live Chat</h3>
         <button onClick={() => setIsOpen(false)} aria-label="Tutup Chat">
@@ -153,7 +153,7 @@ export function Chatbox({ defaultUser }: { defaultUser?: string }) {
                     className="flex-grow p-2 border rounded-lg focus:ring-2 focus:ring-sky-500"
                     required
                 />
-                <button type="submit" className="bg-sky-500 text-white font-bold px-4 py-2 rounded-lg hover:bg-sky-600">
+                <button type="submit" className="bg-sky-500 text-white font-bold px-4 py-2 rounded-lg hover:bg-sky-600 text-black">
                     Mulai
                 </button>
             </form>
@@ -183,7 +183,7 @@ export function Chatbox({ defaultUser }: { defaultUser?: string }) {
               value={newMessage}
               onChange={(e) => setNewMessage(e.target.value)}
               placeholder="Ketik pesan..."
-              className="flex-grow p-3 border rounded-lg focus:ring-2 focus:ring-sky-500"
+              className="flex-grow p-3 border rounded-lg focus:ring-2 focus:ring-sky-500 text-black"
             />
             <button type="submit" className="bg-sky-500 text-white p-3 rounded-lg hover:bg-sky-600" aria-label="Kirim Pesan">
               <Send size={24} />
