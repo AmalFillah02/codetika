@@ -1,4 +1,5 @@
 // src/app/page.tsx
+"use client"; // <-- PERBAIKAN: Tambahkan ini di baris paling atas
 
 import dynamic from 'next/dynamic'; // 1. Impor 'dynamic'
 import { Header } from "@/components/Header";
