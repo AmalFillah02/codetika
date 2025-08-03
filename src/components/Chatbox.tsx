@@ -129,7 +129,8 @@ export function Chatbox({ defaultUser }: { defaultUser?: string }) {
   }
 
   return (
-    <div className="fixed bottom-5 right-5 w-[calc(100%-40px)] sm:w-96 h-[70%] sm:h-[600px] bg-white rounded-2xl shadow-2xl flex flex-col z-50 animate-fade-in-up">
+    // --- PERBAIKAN DI SINI: Mengurangi nilai ketinggian ---
+    <div className="fixed bottom-5 right-5 w-[calc(100%-40px)] sm:w-96 h-[65vh] sm:h-[500px] bg-white rounded-2xl shadow-2xl flex flex-col z-50 animate-fade-in-up">
       <div className="bg-gradient-to-l from-gray-900 via-indigo-900 to-[#1a1a2e] shadow-md text-white p-4 rounded-t-2xl flex justify-between items-center">
         <h3 className="font-bold text-lg">Public Live Chat</h3>
         <button onClick={() => setIsOpen(false)} aria-label="Tutup Chat">
