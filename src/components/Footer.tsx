@@ -27,7 +27,7 @@ export function Footer() {
             <h4 className="font-semibold text-white mb-4">Navigasi</h4>
             <ul className="space-y-2">
               <li><Link href="/about" className="hover:text-pink-400 transition">Tentang Kami</Link></li>
-              <li><Link href="/how-to-order" className="hover:text-pink-400 transition">Cara Pesan</Link></li>
+              <li><Link href="/cara-pesan" className="hover:text-pink-400 transition">Cara Pesan</Link></li>
               <li><Link href="/order" className="hover:text-pink-400 transition">Pesan Layanan</Link></li>
             </ul>
           </div>
