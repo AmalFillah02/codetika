@@ -150,10 +150,10 @@ export function Chatbox({ defaultUser }: { defaultUser?: string }) {
                     value={userName}
                     onChange={(e) => setUserName(e.target.value)}
                     placeholder="Nama Anda..."
-                    className="flex-grow p-2 border rounded-lg focus:ring-2 focus:ring-sky-500"
+                    className="flex-grow p-2 border rounded-lg focus:ring-2 focus:ring-sky-500 text-black"
                     required
                 />
-                <button type="submit" className="bg-sky-500 text-gray-200 font-bold px-4 py-2 rounded-lg hover:bg-sky-600 text-black">
+                <button type="submit" className="bg-sky-500 font-bold px-4 py-2 rounded-lg hover:bg-sky-600 text-white">
                     Mulai
                 </button>
             </form>
