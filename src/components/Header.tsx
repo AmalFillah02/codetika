@@ -29,7 +29,7 @@ export function Header() {
         <nav className="hidden space-x-6 md:flex">
           <Link href="/" className="text-indigo-300 transition hover:text-white font-medium">Home</Link>
           <Link href="/about" className="text-indigo-300 transition hover:text-white font-medium">About</Link>
-          <Link href="https://www.amalfillah.my.id/" target="_blank" className="text-indigo-300 transition hover:text-white font-medium">Project</Link>
+          <Link href="/project" className="text-indigo-300 transition hover:text-white font-medium">Project</Link>
           <Link href="/cara-pesan" className="text-indigo-300 transition hover:text-white font-medium">How to Order</Link>
         </nav>
         <Link 
@@ -52,7 +52,7 @@ export function Header() {
         <nav className="md:hidden bg-gray-900 px-6 pb-4 flex flex-col space-y-4 border-t border-indigo-800/50">
           <Link href="/" className="text-indigo-300 block hover:text-white font-medium pt-4">Home</Link>
           <Link href="/about" className="text-indigo-300 block hover:text-white font-medium">About</Link>
-          <Link href="https://www.amalfillah.my.id/" target="_blank" className="text-indigo-300 block hover:text-white font-medium">Project</Link>
+          <Link href="/project" className="text-indigo-300 block hover:text-white font-medium">Project</Link>
           <Link href="/cara-pesan" className="text-indigo-300 block hover:text-white font-medium">How to Order</Link>
           <Link 
             href="/order" 
