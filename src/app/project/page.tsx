@@ -40,7 +40,6 @@ export default async function ProjectPage() {
     <div className="bg-gray-900 text-white">
       <Header />
       <main>
-        {/* Hero Section */}
         <section className="bg-gradient-to-b from-gray-900 to-indigo-900/30 py-10 text-center">
           <div className="container mx-auto px-6">
             <h1 
@@ -58,7 +57,6 @@ export default async function ProjectPage() {
           </div>
         </section>
 
-        {/* Project Grid Section */}
         <section className="py-3 bg-indigo-900/20 animate-fade-in-up">
           <div className="container mx-auto px-6">
             {projects.length === 0 ? (
@@ -68,7 +66,6 @@ export default async function ProjectPage() {
               </div>
             ) : (
               <div className="grid grid-cols-2 gap-4 md:grid-cols-2 lg:grid-cols-3 md:gap-8">
-                {/* ▼▼▼ PERUBAHAN DI SINI (Looping menjadi lebih sederhana) ▼▼▼ */}
                 {projects.map((project, index) => (
                   <ProjectCard key={project.id} project={project} index={index} />
                 ))}

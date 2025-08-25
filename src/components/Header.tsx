@@ -28,9 +28,9 @@ export function Header() {
         {/* Navigasi Desktop */}
         <nav className="hidden space-x-6 md:flex">
           <Link href="/" className="text-indigo-300 transition hover:text-white font-medium">Home</Link>
-          <Link href="/about" className="text-indigo-300 transition hover:text-white font-medium">About</Link>
+          <Link href="/about" className="text-indigo-300 transition hover:text-white font-medium">Tentang</Link>
           <Link href="/project" className="text-indigo-300 transition hover:text-white font-medium">Project</Link>
-          <Link href="/cara-pesan" className="text-indigo-300 transition hover:text-white font-medium">How to Order</Link>
+          <Link href="/cara-pesan" className="text-indigo-300 transition hover:text-white font-medium">Cara Pesan</Link>
         </nav>
         <Link 
           href="/order" 
@@ -51,9 +51,9 @@ export function Header() {
       {isMenuOpen && (
         <nav className="md:hidden bg-gray-900 px-6 pb-4 flex flex-col space-y-4 border-t border-indigo-800/50">
           <Link href="/" className="text-indigo-300 block hover:text-white font-medium pt-4">Home</Link>
-          <Link href="/about" className="text-indigo-300 block hover:text-white font-medium">About</Link>
+          <Link href="/about" className="text-indigo-300 block hover:text-white font-medium">Tentang</Link>
           <Link href="/project" className="text-indigo-300 block hover:text-white font-medium">Project</Link>
-          <Link href="/cara-pesan" className="text-indigo-300 block hover:text-white font-medium">How to Order</Link>
+          <Link href="/cara-pesan" className="text-indigo-300 block hover:text-white font-medium">Cara Pesan</Link>
           <Link 
             href="/order" 
             className="w-full text-center bg-pink-600 text-white px-5 py-2 rounded-lg font-semibold shadow-lg mt-2"
