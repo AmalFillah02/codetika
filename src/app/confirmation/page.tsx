@@ -1,4 +1,3 @@
-// src/app/confirmation/page.tsx
 'use client';
 
 import { Suspense } from 'react';
@@ -13,11 +12,9 @@ const currencyFormatter = (amount: number) => {
     return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(amount);
 }
 
-// Komponen klien terpisah untuk logika yang menggunakan useSearchParams
 function ConfirmationContent() {
   const searchParams = useSearchParams();
 
-  // Mengambil data dari parameter URL
   const name = searchParams.get('name');
   const email = searchParams.get('email');
   const appType = searchParams.get('app_type');
@@ -26,7 +23,6 @@ function ConfirmationContent() {
   const dp = total / 2;
   const bankAccountNumber = '1234567890';
 
-  // Fungsi untuk menyalin nomor rekening
   const handleCopy = () => {
     navigator.clipboard.writeText(bankAccountNumber);
     alert('Nomor rekening berhasil disalin!');
@@ -96,14 +92,12 @@ function ConfirmationContent() {
   );
 }
 
-// Komponen Halaman Utama (Server Component)
 export default function ConfirmationPage() {
   return (
     <div className="bg-gray-900">
       <Header />
       <main className="min-h-screen py-20 md:py-32 flex items-center justify-center">
         <div className="container mx-auto px-4">
-          {/* Bungkus komponen klien dengan Suspense */}
           <Suspense fallback={<LoadingState />}>
             <ConfirmationContent />
           </Suspense>
@@ -114,7 +108,6 @@ export default function ConfirmationPage() {
   );
 }
 
-// Komponen untuk fallback loading
 function LoadingState() {
     return (
         <div className="flex flex-col items-center justify-center gap-4">

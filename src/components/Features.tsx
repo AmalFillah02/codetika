@@ -1,4 +1,3 @@
-// src/components/Features.tsx
 import { Code, Smartphone, PenTool } from 'lucide-react';
 
 const featuresData = [
@@ -21,11 +20,9 @@ const featuresData = [
 
 export function Features() {
   return (
-    // Mengubah latar belakang menjadi gelap
     <section className="py-20 bg-[#1a1a2e]">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
-          {/* Mengubah warna teks */}
           <h2 className="text-3xl font-bold text-white">Layanan Unggulan Kami</h2>
           <p className="text-lg text-indigo-200 mt-2">Solusi lengkap untuk kebutuhan digital Anda.</p>
         </div>
@@ -33,7 +30,6 @@ export function Features() {
           {featuresData.map((feature, index) => (
             <div 
               key={index}
-              // Mengubah style kartu menjadi gelap dengan efek glassmorphism
               className="bg-indigo-900/30 backdrop-blur-sm border border-indigo-500/20 rounded-lg p-8 text-center shadow-lg transition-all duration-300 hover:shadow-pink-500/10 hover:border-indigo-500/50 hover:-translate-y-2"
               style={{ animationDelay: `${0.2 * (index + 1)}s` }}
             >

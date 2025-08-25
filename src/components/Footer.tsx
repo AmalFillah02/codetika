@@ -1,7 +1,7 @@
 // src/components/Footer.tsx
 
 import Link from "next/link";
-import { Instagram } from 'lucide-react'; // Impor ikon Instagram
+import { Instagram } from 'lucide-react';
 import Image from "next/image";
 
 export function Footer() {
@@ -9,20 +9,19 @@ export function Footer() {
     <footer className="bg-gray-900 text-indigo-300 border-t border-indigo-800/50">
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Kolom Logo & Deskripsi */}
           <div className="md:col-span-1">
              <Link href="/" className="flex items-center gap-2 mb-4">
               <Image
                 src="/codetika-white.png"
                 alt="CODETIKA Logo"
-                width={170} // Sesuaikan lebar logo
-                height={90} // Sesuaikan tinggi logo
+                width={170}
+                height={90}
+                priority
               />
             </Link>
             <p className="text-indigo-400">Membantu bisnis dan individu membangun kehadiran digital yang kuat.</p>
           </div>
 
-          {/* Kolom Navigasi */}
           <div>
             <h4 className="font-semibold text-white mb-4">Navigasi</h4>
             <ul className="space-y-2">
@@ -32,7 +31,6 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Kolom Layanan */}
            <div>
             <h4 className="font-semibold text-white mb-4">Layanan</h4>
             <ul className="space-y-2">
@@ -42,7 +40,6 @@ export function Footer() {
             </ul>
           </div>
           
-          {/* Kolom Sosial Media */}
           <div>
             <h4 className="font-semibold text-white mb-4">Hubungi Kami</h4>
             <div className="flex space-x-4">

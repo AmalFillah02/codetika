@@ -1,5 +1,3 @@
-// /src/app/about/page.tsx
-
 import Image from "next/image";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -9,11 +7,9 @@ import { Chatbox } from "@/components/Chatbox";
 
 export default function AboutPage() {
   return (
-    // Menggunakan satu warna latar belakang utama untuk konsistensi
     <div className="bg-gray-900">
       <Header />
       <main>
-        {/* Section Hero */}
         <section className="bg-gradient-to-b from-gray-900 to-indigo-900/30 py-20 text-center flex items-center justify-center md:min-h-[40vh]">
           <div className="container mx-auto px-6">
             <h1 
@@ -31,7 +27,6 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Section Misi & Visi */}
         <section className="py-20 bg-indigo-900/20">
           <div className="container mx-auto px-6">
             <div className="grid md:grid-cols-2 gap-12 items-start">
@@ -39,7 +34,6 @@ export default function AboutPage() {
                 className="text-center md:text-left animate-fade-in-up"
                 style={{ animationDelay: '0.2s', animationFillMode: 'backwards' }}
               >
-                {/* Ikon disesuaikan dengan tema baru */}
                 <div className="inline-flex items-center justify-center w-16 h-16 mb-6 bg-gray-800/50 rounded-full text-pink-500">
                   <Lightbulb className="w-8 h-8" />
                 </div>
@@ -52,7 +46,6 @@ export default function AboutPage() {
                 className="text-center md:text-left animate-fade-in-up"
                 style={{ animationDelay: '0.4s', animationFillMode: 'backwards' }}
               >
-                {/* Ikon disesuaikan dengan tema baru */}
                 <div className="inline-flex items-center justify-center w-16 h-16 mb-6 bg-gray-800/50 rounded-full text-pink-500">
                   <Target className="w-8 h-8" />
                 </div>
@@ -65,7 +58,6 @@ export default function AboutPage() {
           </div>
         </section>
         
-        {/* Section Filosofi CODETIKA */}
         <section className="py-20 bg-gray-900">
           <div className="container mx-auto px-6">
             <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -93,7 +85,6 @@ export default function AboutPage() {
                 </p>
                 <h3 className="text-xl font-semibold text-white mb-4">Nilai-nilai Kami</h3>
                 <ul className="space-y-3 text-indigo-200">
-                  {/* Ikon disesuaikan dengan tema baru */}
                   <li className="flex items-start gap-3"><CheckCircle className="w-5 h-5 mt-1 text-pink-500 flex-shrink-0" /><span><strong>Integritas:</strong> Orisinalitas, tidak menyisipkan kode berbahaya, dan menghargai hak cipta.</span></li>
                   <li className="flex items-start gap-3"><CheckCircle className="w-5 h-5 mt-1 text-pink-500 flex-shrink-0" /><span><strong>Transparansi:</strong> Resource yang jujur dan dapat ditinjau secara terbuka.</span></li>
                   <li className="flex items-start gap-3"><CheckCircle className="w-5 h-5 mt-1 text-pink-500 flex-shrink-0" /><span><strong>Tanggung Jawab:</strong> Menghindari penyalahgunaan data, dan membangun solusi yang memanusiakan pengguna.</span></li>
@@ -104,7 +95,6 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Section CTA */}
         <CTA />
       </main>
       <Footer />

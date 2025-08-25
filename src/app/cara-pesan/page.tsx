@@ -1,5 +1,3 @@
-// /src/app/how-to-order/page.tsx
-
 import Link from 'next/link';
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -39,7 +37,6 @@ export default function HowToOrderPage() {
     <div className="bg-gray-900">
       <Header />
       <main>
-        {/* Hero Section */}
         <section className="bg-gradient-to-b from-gray-900 to-indigo-900/30 py-20 text-center flex items-center justify-center">
           <div className="container mx-auto px-6">
             <h1 
@@ -57,7 +54,6 @@ export default function HowToOrderPage() {
           </div>
         </section>
 
-        {/* Steps Section */}
         <section className="py-20 bg-indigo-900/20">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto">
@@ -82,7 +78,6 @@ export default function HowToOrderPage() {
           </div>
         </section>
 
-        {/* CTA Section */}
         <section className="bg-gray-900 py-20">
             <div className="container mx-auto px-6 text-center">
                 <h2 

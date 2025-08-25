@@ -1,5 +1,3 @@
-// src/components/Chatbox.tsx
-
 "use client";
 
 import { useState, useEffect, useRef } from 'react';
@@ -13,7 +11,6 @@ type Message = {
   sender_name: string;
 };
 
-// Tambahkan 'defaultUser' sebagai prop opsional
 export function Chatbox({ defaultUser }: { defaultUser?: string }) {
   const [isOpen, setIsOpen] = useState(false);
   const [userName, setUserName] = useState('');
@@ -22,14 +19,11 @@ export function Chatbox({ defaultUser }: { defaultUser?: string }) {
   const [newMessage, setNewMessage] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // Cek nama default atau nama dari localStorage
   useEffect(() => {
-    // Prioritaskan nama default jika ada (untuk admin)
     if (defaultUser) {
       setUserName(defaultUser);
       setIsNameSet(true);
     } else {
-      // Jika tidak, gunakan nama dari localStorage (untuk pengunjung biasa)
       const savedName = localStorage.getItem('chat_username');
       if (savedName) {
         setUserName(savedName);
@@ -129,7 +123,6 @@ export function Chatbox({ defaultUser }: { defaultUser?: string }) {
   }
 
   return (
-    // --- PERBAIKAN DI SINI: Mengurangi nilai ketinggian ---
     <div className="fixed bottom-5 right-5 w-[calc(100%-40px)] sm:w-96 h-[45vh] sm:h-[450px] bg-white rounded-2xl shadow-2xl flex flex-col z-50 animate-fade-in-up">
       <div className="bg-gradient-to-l from-gray-900 via-indigo-900 to-[#1a1a2e] shadow-md text-white p-4 rounded-t-2xl flex justify-between items-center">
         <h3 className="font-bold text-lg">Public Live Chat</h3>
@@ -138,7 +131,6 @@ export function Chatbox({ defaultUser }: { defaultUser?: string }) {
         </button>
       </div>
 
-      {/* Jika nama belum diatur DAN tidak ada nama default, tampilkan form nama */}
       {!isNameSet && !defaultUser ? (
         <div className="p-6 flex flex-col justify-center items-center h-full">
             <User size={48} className="text-gray-300 mb-4" />

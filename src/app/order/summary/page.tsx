@@ -1,5 +1,3 @@
-// src/app/order/summary/page.tsx
-
 "use client";
 
 import { useEffect, useState } from "react";
@@ -18,7 +16,7 @@ type OrderData = {
   total: number;
 };
 
-// Helper untuk format mata uang
+// set mata uang
 const currencyFormatter = (amount: number) => {
     return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(amount);
 }
@@ -34,7 +32,6 @@ export default function OrderSummaryPage() {
     if (stored) {
       setOrder(JSON.parse(stored));
     } else {
-      // Jika tidak ada data, kembali ke halaman order
       router.push("/order");
     }
     setIsLoading(false);
@@ -45,7 +42,6 @@ export default function OrderSummaryPage() {
 
     setIsSubmitting(true);
 
-    // Langkah 1: Simpan pesanan ke Supabase
     const { error } = await supabase.from("orders").insert([
       {
         name: order.name,
@@ -65,7 +61,6 @@ export default function OrderSummaryPage() {
       return;
     }
 
-    // Langkah 2: Coba kirim email konfirmasi
     try {
       const emailPayload = {
         name: order.name,
@@ -100,7 +95,6 @@ export default function OrderSummaryPage() {
       alert("⚠️ Pesanan Anda berhasil disimpan, namun kami gagal mengirim email konfirmasi. Kami akan menghubungi Anda secara manual.");
     }
 
-    // Langkah 3: Selesaikan proses
     setIsSubmitting(false);
     sessionStorage.removeItem("order");
     router.push("/");
@@ -124,7 +118,6 @@ export default function OrderSummaryPage() {
       <main className="min-h-screen py-12 md:py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto bg-indigo-900/20 border border-indigo-500/20 rounded-2xl shadow-xl p-8">
-            {/* --- Header Kwitansi --- */}
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center pb-6 border-b-2 border-dashed border-indigo-800/50">
               <div className="flex items-center gap-4">
                 <Receipt className="w-10 h-10 text-pink-500" />
@@ -135,7 +128,6 @@ export default function OrderSummaryPage() {
               </div>
             </div>
             
-            {/* --- Detail Pelanggan --- */}
             <div className="grid md:grid-cols-2 gap-6 my-8">
               <div className="bg-gray-800/50 p-4 rounded-lg">
                 <h3 className="font-semibold text-indigo-300 mb-3 flex items-center gap-2"><User size={18} /> Info Pelanggan</h3>
@@ -149,7 +141,6 @@ export default function OrderSummaryPage() {
               </div>
             </div>
 
-            {/* --- Rincian Fitur & Biaya --- */}
             <div>
               <h3 className="font-semibold text-indigo-300 mb-3">Rincian Fitur</h3>
               <div className="space-y-2 border border-indigo-700/50 rounded-lg p-4">
@@ -164,7 +155,6 @@ export default function OrderSummaryPage() {
               </div>
             </div>
 
-            {/* --- Total --- */}
             <div className="mt-8 pt-6 border-t border-indigo-800/50">
               <div className="flex justify-end items-baseline gap-4">
                 <span className="text-lg font-medium text-indigo-200">Total Estimasi:</span>
@@ -172,7 +162,6 @@ export default function OrderSummaryPage() {
               </div>
             </div>
 
-            {/* --- Tombol Aksi --- */}
             <div className="flex flex-col-reverse sm:flex-row gap-4 mt-10">
               <button
                 onClick={() => router.push("/order")}

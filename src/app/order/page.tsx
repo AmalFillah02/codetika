@@ -1,14 +1,10 @@
-// src/app/order/page.tsx
-
 "use client";
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Header } from "@/components/Header";
-// import { Footer } from "@/components/Footer"; // Dihapus karena tidak terpakai
 import { ArrowLeft, User, Briefcase, Boxes, ShoppingCart, CheckCircle } from 'lucide-react';
 
-// --- Data Konfigurasi ---
 type FeatureOption = {
   label: string;
   price: number;
@@ -35,7 +31,6 @@ const appTypes = [
     "Aplikasi Layanan Publik", "Aplikasi HR", "Lainnya..."
 ];
 
-// --- Komponen Utama ---
 export default function OrderPage() {
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
@@ -45,14 +40,12 @@ export default function OrderPage() {
     appType: "",
     selectedFeatures: [] as string[],
   });
-  // State untuk menyimpan pesan error
   const [errors, setErrors] = useState({ name: '', email: '' });
   const router = useRouter();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-    // Hapus error saat pengguna mulai mengetik
     if (name === 'name' || name === 'email') {
         setErrors(prev => ({ ...prev, [name]: '' }));
     }
@@ -73,9 +66,7 @@ export default function OrderPage() {
     return acc + (feature?.price || 0);
   }, 0);
 
-  // Fungsi untuk validasi langkah pertama
   const validateStep1 = () => {
-    // Diubah dari 'let' menjadi 'const'
     const tempErrors = { name: '', email: '' };
     let isValid = true;
 
@@ -87,8 +78,7 @@ export default function OrderPage() {
     if (!formData.email.trim()) {
       tempErrors.email = 'Alamat email wajib diisi.';
       isValid = false;
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      // Validasi format email sederhana
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) { //validasi email
       tempErrors.email = 'Format alamat email tidak valid.';
       isValid = false;
     }
@@ -98,7 +88,6 @@ export default function OrderPage() {
   };
 
   const nextStep = () => {
-    // Jalankan validasi sebelum pindah ke langkah berikutnya
     if (currentStep === 1) {
       if (validateStep1()) {
         setCurrentStep(prev => prev + 1);
@@ -112,7 +101,6 @@ export default function OrderPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Pastikan semua validasi sudah lolos sebelum submit
     if (currentStep === 1 && !validateStep1()) return;
 
     const finalData = { ...formData, total };
@@ -224,7 +212,6 @@ export default function OrderPage() {
   );
 }
 
-// --- Komponen Pembantu ---
 const StepIndicator = ({ step, currentStep, label }: { step: number, currentStep: number, label: string }) => {
   const isActive = step === currentStep;
   const isCompleted = step < currentStep;

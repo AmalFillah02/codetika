@@ -1,10 +1,8 @@
-// /src/app/project/page.tsx
-
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Chatbox } from '@/components/Chatbox';
 import { supabase } from '@/lib/supabase';
-import { ProjectCard } from '@/components/ProjectCard'; // <-- 1. Impor komponen baru
+import { ProjectCard } from '@/components/ProjectCard';
 
 // Tipe data tetap sama
 type Project = {
@@ -46,7 +44,7 @@ export default async function ProjectPage() {
               className="text-4xl md:text-5xl font-bold animate-fade-in-down"
               style={{ animationDelay: '0.2s', animationFillMode: 'backwards' }}
             >
-              Portofolio Proyek Kami
+              Proyek Selesai
             </h1>
             <p 
               className="mt-4 md:text-lg text-sm text-indigo-200 max-w-2xl mx-auto animate-fade-in-down"

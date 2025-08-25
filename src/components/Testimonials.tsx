@@ -1,34 +1,31 @@
-// src/components/Testimonials.tsx
-"use client"; // Tambahkan ini untuk mengubah menjadi Client Component
+"use client";
 
 import Image from 'next/image';
 import { Quote } from 'lucide-react';
 
-// Anda bisa mengganti data ini dengan testimoni asli dari klien Anda
 const testimonialsData = [
   {
     quote: "Kerja sama dengan CODETIKA sangat memuaskan. Websitenya cepat, modern, dan sesuai dengan apa yang kami harapkan. Komunikasinya juga sangat lancar!",
     name: "Khayis Al",
     title: "CEO, Maju Sejahtera",
-    avatarUrl: "/avatars/cotang.png", // Ganti dengan path gambar avatar Anda
+    avatarUrl: "/avatars/cotang.png",
   },
   {
     quote: "Proses pengerjaan aplikasinya sangat profesional. Semua fitur yang saya minta diimplementasikan dengan baik. Sangat direkomendasikan!",
     name: "Nadia",
     title: "Founder, Startup Inovasi",
-    avatarUrl: "/avatars/nadia.jpg", // Ganti dengan path gambar avatar Anda
+    avatarUrl: "/avatars/nadia.jpg",
   },
   {
     quote: "Desain UI/UX yang diberikan benar-benar mengubah tampilan produk kami. Pengguna jadi lebih betah dan mudah menggunakan aplikasi kami. Terima kasih banyak.",
     name: "Sadewa Cahya",
     title: "Manager, Bisnis Transportasi",
-    avatarUrl: "/avatars/dewo.png", // Ganti dengan path gambar avatar Anda
+    avatarUrl: "/avatars/dewo.png",
   },
 ];
 
 export function Testimonials() {
   return (
-    // Mengubah latar belakang agar sesuai dengan Hero
     <section className="w-full bg-gradient-to-br from-[#1a1a2e] via-indigo-900 to-gray-900 py-20">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
@@ -43,11 +40,9 @@ export function Testimonials() {
           {testimonialsData.map((testimonial, index) => (
             <div 
               key={index}
-              // Mengubah style kartu menjadi gelap
               className="bg-indigo-900/20 backdrop-blur-sm border border-indigo-500/20 rounded-lg p-8 shadow-lg transition-all duration-300 hover:shadow-pink-500/10 hover:border-indigo-500/50 hover:-translate-y-2 flex flex-col"
             >
               <Quote className="w-10 h-10 text-pink-500/50 mb-4" />
-              {/* --- PERBAIKAN DI SINI: Hapus tanda kutip literal --- */}
               <p className="text-indigo-200 italic flex-grow">
                 {testimonial.quote}
               </p>
@@ -58,7 +53,6 @@ export function Testimonials() {
                   width={48}
                   height={48}
                   className="rounded-full"
-                  // Fallback jika gambar tidak ditemukan
                   onError={(e) => { e.currentTarget.src = 'https://placehold.co/48x48/1a1a2e/ffffff?text=N/A'; }}
                 />
                 <div className="ml-4">

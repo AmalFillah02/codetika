@@ -1,11 +1,8 @@
-// src/app/admin/page.tsx
-
 "use client";
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
-// --- 1. Impor library xlsx dan ikon Download ---
 import * as XLSX from 'xlsx';
 import { LogOut, DollarSign, ShoppingBag, Users, Loader2, AlertCircle, Trash2, Eye, AlertTriangle, Download } from 'lucide-react';
 import { Chatbox } from '@/components/Chatbox';
@@ -21,7 +18,6 @@ type Order = {
   created_at: string;
 };
 
-// Helper untuk format mata uang
 const currencyFormatter = (amount: number) => {
     return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(amount);
 }
@@ -32,8 +28,6 @@ export default function AdminPage() {
   const [loading, setLoading] = useState(true);
   const [authChecking, setAuthChecking] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  
-  // State untuk modal
   const [selectedOrder, setSelectedOrder] = useState<Order | null>(null);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
 
@@ -103,9 +97,8 @@ export default function AdminPage() {
     setSelectedOrder(null);
   };
 
-  // --- 2. Fungsi untuk handle export ke Excel ---
+  // handle eksport excel
   const handleExportToExcel = () => {
-    // Format data agar sesuai untuk Excel
     const formattedData = orders.map(order => ({
       'Tanggal Pesanan': new Date(order.created_at).toLocaleString('id-ID'),
       'Nama Pelanggan': order.name,
@@ -116,14 +109,11 @@ export default function AdminPage() {
       'Total Biaya': order.total,
     }));
 
-    // Buat worksheet dari data yang sudah diformat
     const worksheet = XLSX.utils.json_to_sheet(formattedData);
-    // Buat workbook baru
     const workbook = XLSX.utils.book_new();
-    // Tambahkan worksheet ke workbook
     XLSX.utils.book_append_sheet(workbook, worksheet, "Pesanan");
-
-    // Atur lebar kolom agar lebih rapi
+    
+    // lebar kolom
     worksheet['!cols'] = [
         { wch: 20 }, // Tanggal Pesanan
         { wch: 25 }, // Nama Pelanggan
@@ -134,7 +124,6 @@ export default function AdminPage() {
         { wch: 15 }, // Total Biaya
     ];
 
-    // Trigger download file Excel
     XLSX.writeFile(workbook, "Daftar_Pesanan_CODETIKA.xlsx");
   };
 
@@ -176,7 +165,6 @@ export default function AdminPage() {
         </div>
 
         <div className="bg-indigo-900/20 border border-indigo-500/20 rounded-lg shadow-lg overflow-hidden">
-          {/* --- 3. Tambahkan tombol Export di sini --- */}
           <div className="p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <h2 className="text-lg font-semibold text-white">Daftar Pesanan Terbaru</h2>
             <button 
@@ -258,7 +246,6 @@ export default function AdminPage() {
   );
 }
 
-// Komponen Pembantu
 const StatCard = ({ title, value, icon }: { title: string, value: string, icon: React.ReactNode }) => (
   <div className="bg-indigo-900/20 border border-indigo-500/20 p-6 rounded-lg shadow-lg flex items-center gap-6">
     <div className="bg-gray-800/50 text-pink-500 p-3 rounded-full">{icon}</div>
@@ -279,7 +266,6 @@ const SkeletonRow = () => (
   </tr>
 );
 
-// Modal Detail Pesanan
 const OrderDetailModal = ({ order, onClose }: { order: Order, onClose: () => void }) => (
   <div className="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm flex justify-center items-center z-50 p-4">
     <div className="bg-gray-900 border border-indigo-700/50 rounded-lg shadow-xl w-full max-w-2xl animate-fade-in-up">
@@ -312,7 +298,6 @@ const OrderDetailModal = ({ order, onClose }: { order: Order, onClose: () => voi
   </div>
 );
 
-// Modal Konfirmasi Hapus
 const DeleteConfirmationModal = ({ onConfirm, onClose }: { onConfirm: () => void, onClose: () => void }) => (
   <div className="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm flex justify-center items-center z-50 p-4">
     <div className="bg-gray-900 border border-red-500/50 rounded-lg shadow-xl w-full max-w-md animate-fade-in-up">

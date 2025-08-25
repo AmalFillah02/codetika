@@ -8,7 +8,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function POST(req: Request) {
   const body = await req.json();
 
-  const phoneNumber = "6282138199126"; // GANTI dengan nomor WA kamu (format internasional tanpa tanda +)
+  const phoneNumber = "6282138199126";
 
   const confirmationMessage = `Halo, saya ${body.name} telah melakukan pemesanan aplikasi jenis ${body.app_type} dengan total Rp${body.total.toLocaleString()} dan telah membayar DP sebesar Rp${(body.total / 2).toLocaleString()}. Berikut bukti transfer saya.`;
 
